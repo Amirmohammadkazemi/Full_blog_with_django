@@ -15,3 +15,6 @@ def Contact(request):
 
 def Support(request):
     pass
+
+def Blogs(request):
+    pass
