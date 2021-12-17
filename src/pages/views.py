@@ -2,19 +2,19 @@ from django.shortcuts import render
 
 # Create your views here.
 def Home(request):
-    pass
+    return render(request, 'pages/index.html')
 
 def AboutMe(request):
-    pass
+    return render(request, 'pages/aboutme.html')
 
 def Projects(request):
-    pass
+    return render(request, 'pages/projects.html')
 
 def Contact(request):
-    pass
+    return render(request, 'pages/contact.html')
 
 def Support(request):
-    pass
+    return render(request, 'pages/support.html')
 
 def Blogs(request):
-    pass
+    return render(request, 'pages/blogs.html')
