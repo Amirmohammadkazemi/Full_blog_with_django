@@ -36,3 +36,16 @@ class  Sub(models.Model):
     SubStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     def __str__(self):
         return "توضیحات"
+    
+class Media(models.Model):
+    STATUS_CHOICES = (
+        ('Publish', 'انتشار'),
+        ('Draft', 'پیش نویس')
+    )
+    MediaTitle = models.CharField(max_length=100, verbose_name="تیتر مقاله")
+    MediaBody = RichTextUploadingField(null=True, default='Body', verbose_name="متن مقاله")
+    MediaStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
+    #User
+    
+    def __str__(self):
+        return self.MediaTitle
