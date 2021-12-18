@@ -13,6 +13,9 @@ class  Links(models.Model):
     LinkAddress = models.CharField(max_length=1000, verbose_name='آدرس لینک')
     LinkStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     
+    def __str__(self):
+        return self.LinkName
+    
 class  Header(models.Model):
     STATUS_CHOICES = (
         ('Publish', 'انتشار'),
@@ -21,6 +24,9 @@ class  Header(models.Model):
     HeaderDescription = RichTextField()
     HeaderStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     
+    def __str__(self):
+        return "توضیحات بالای صفحه"
+    
 class  Sub(models.Model):
     STATUS_CHOICES = (
     ('Publish', 'انتشار'),
@@ -28,3 +34,5 @@ class  Sub(models.Model):
     )
     SubDescription = RichTextField()
     SubStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
+    def __str__(self):
+        return "توضیحات"

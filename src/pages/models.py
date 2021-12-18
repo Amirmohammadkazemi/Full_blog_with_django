@@ -39,13 +39,13 @@ class Projects(models.Model):
     ProjectStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     
     def __str__(self):
-        return self.title
+        return self.ProjectName
 
 class Contact(models.Model):
     ContactDescription = RichTextField(null=True, verbose_name='تویحات')
     
     def __str__(self):
-        return self.title
+        return "ارتباط با من"
 
 class Support(models.Model):
     STATUS_CHOICES = (
@@ -57,4 +57,4 @@ class Support(models.Model):
     ArticleStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     
     def __str__(self):
-        return self.title
+        return "حمایت مالی"
