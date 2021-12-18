@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="fa" dir="rtl">
+
+<head>
+    <title>Obscura</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="{% static '/pages/style/css/style.css' %}" media="all">
+    <link rel="stylesheet" type="text/css" href="{% static '/pages/style/css/media-queries.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/style/js/player/mediaelementplayer.css' %}">
+    <link rel="stylesheet" type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700'>
+    <link rel="shortcut icon" href="{% static '/style/images/logo.png' %}">
+    <!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/css/ie8.css" media="all">
+<![endif]-->
+    <!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="style/css/ie9.css" media="all">
+<![endif]-->
+    <script src="{% static '/pages/style/js/jquery-1.7.2.min.js' %}"></script>
+    <script src="{% static '/pages/style/js/ddsmoothmenu.js' %}"></script>
+    <script src="{% static '/pages/style/js/retina.js' %}"></script>
+    <script src="{% static '/pages/style/js/selectnav.js' %}"></script>
+    <script src="{% static '/pages/style/js/jquery.masonry.min.js' %}"></script>
+    <script src="{% static '/pages/style/js/jquery.fitvids.js' %}"></script>
+    <script src="{% static '/pages/style/js/jquery.backstretch.min.js' %}"></script>
+    <script src="{% static '/pages/style/js/mediaelement.min.js' %}"></script>
+    <script src="{% static '/pages/style/js/mediaelementplayer.min.js' %}"></script>
+    <script src="{% static '/pages/style/js/jquery.dcflickr.1.0.js' %}"></script>
+    <script src="{% static '/pages/style/js/twitter.min.js' %}"></script>
+    <script>
+        $.backstretch("{% static '/pages/style/images/bg/3.jpg' %}");
+    </script>
+</head>
+
+<body>
+    <div class="scanlines"></div>
+    <div class="header-wrapper opacity">
+        <div class="header">
+            <div class="logo">
+                <a href="/"> <img src="static/pages/style/images/logo@2x.png" alt=""> </a>
+            </div>
+            <div id="menu-wrapper">
+                <div id="menu" class="menu">
+                    <ul id="tiny">
+                        <li><a href="/support" target="_blank">حمایت مالی</a>
+                        </li>
+                        <li><a href="/" target="_blank">وبلاگ ها</a>
+                        </li>
+                        <li><a href="/projects" target="_blank">پروژه ها</a>
+                        </li>
+                        <li><a href="/aboutme" target="_blank">درباره من</a>
+                        </li>
+                        <li><a href="/contact" target="_blank">تماس با من</a></li>
+                        <li><a href="/">خانه</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="footer" class="four">
+        <div id="first" class="widget-area">
+            <div class="widget widget_search">
+                <h3 class="widget-title">جستجو</h3>
+                <form class="searchform" method="get" action="#">
+                    <input type="text" name="s" value="type and hit enter" onFocus="this.value=''" onBlur="this.value='type and hit enter'" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    {% block main %} {% endblock %}
+
+    <div class="footer-wrapper">
+        <div id="footer" class="four">
+            <div id="first" class="widget-area">
+                مواظب باشید. مکنه اینجا دیدتون رو عوض کنه. پس اگه جرئت ریسک ندارید همین الآن اینجا رو ترک کنید......
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="{% static '/pages/style/js/scripts.js' %}"></script>
+</body>
+
+</html>
