@@ -5,6 +5,7 @@ from .models import Article, Aboutme, Projects, Contact, Support
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('ArticleTitle', 'ArticleDate', 'ArticleStatus')
     list_filter = ('ArticleTitle', 'ArticleDate', 'ArticleStatus')
+    search_fields = ('ArticleTitle', 'ArticleDate', 'ArticleStatus')
     
     
 class ProjectAdmin(admin.ModelAdmin):
