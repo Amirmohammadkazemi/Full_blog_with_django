@@ -14,7 +14,7 @@ class Article(models.Model):
     ArtileThumbnail = models.ImageField(null=True, verbose_name="تصویر مقاله")
     ArticleDiscription = models.TextField(null=True, verbose_name='توضیح کوتاه')
     ArticleBody = RichTextUploadingField(null=True, default='Body', verbose_name="متن مقاله")
-    ArticleDate = models.DateField(default=timezone.now(), verbose_name="تاریخ")
+    ArticleDate = models.DateField(default=timezone.now, verbose_name="تاریخ")
     ArticleStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     #User
 
