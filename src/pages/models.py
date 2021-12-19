@@ -35,7 +35,7 @@ class Projects(models.Model):
     )
     ProjectName = models.CharField(null=True, max_length=100, verbose_name='نام پروژه')
     ProjectImage = models.ImageField(null=True, verbose_name='تصویر پروژه')
-    ProjectDescription = RichTextField(null=True, verbose_name='توضیحات پروژه')
+    ProjectDescription = RichTextUploadingField(null=True, verbose_name='توضیحات پروژه')
     ProjectStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     
     def __str__(self):
@@ -53,7 +53,7 @@ class Support(models.Model):
         ('Draft', 'پیش نویس')
     )
     SupportImage = models.ImageField(null=True, verbose_name='تصویر')
-    SupportDescription = RichTextField(null=True, verbose_name='توضیحات ')
+    SupportDescription = RichTextUploadingField(null=True, verbose_name='توضیحات ')
     ArticleStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     
     def __str__(self):
