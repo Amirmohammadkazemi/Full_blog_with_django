@@ -36,6 +36,7 @@ class Projects(models.Model):
     ProjectName = models.CharField(null=True, max_length=100, verbose_name='نام پروژه')
     ProjectImage = models.ImageField(null=True, verbose_name='تصویر پروژه')
     ProjectDescription = RichTextUploadingField(null=True, verbose_name='توضیحات پروژه')
+    ProjectDate = models.DateTimeField(default=timezone.now, verbose_name="تاریخ")
     ProjectStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     
     def __str__(self):

@@ -1,33 +1,31 @@
 {% extends 'pages/base.html' %} {% block main %}
 <div class="wrapper">
     <div class="content box">
-        <h1 class="title">Contact</h1>
+        <h1 class="title">تماس با من</h1>
         <div class="map">
             <div class="map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1618047.9864217679!2d48.8104572!3d37.6198074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x401fd79dd371a61f%3A0x4a78900f0f0b7b0b!2sGilan%20Province%2C%20Iran!5e0!3m2!1sen!2snl!4v1639817242017!5m2!1sen!2snl"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
-        <h3>Feel Free to Drop Me a Line</h3>
-        <p>Maecenas vehicula condimentum consequat. Ut suscipit ipsum eget leotero convallis feugiat upsoyut fermentum leo auctor consequat turpis aturo nisiper.</p>
         <div class="form-container">
             <form class="forms" action="shahinmail12@gmail.com" method="post">
                 <fieldset>
                     <ol>
                         <li class="form-row text-input-row">
-                            <label>Name</label>
+                            <label>نام</label>
                             <input type="text" name="name" value="" class="text-input required">
                         </li>
                         <li class="form-row text-input-row">
-                            <label>Email</label>
+                            <label>ایمیل</label>
                             <input type="text" name="email" value="" class="text-input required email">
                         </li>
                         <li class="form-row text-input-row">
-                            <label>Subject</label>
+                            <label>موضوع</label>
                             <input type="text" name="subject" value="" class="text-input required">
                         </li>
                         <li class="form-row text-area-row">
-                            <label>Message</label>
+                            <label>پیام</label>
                             <textarea name="message" class="text-area required"></textarea>
                         </li>
                         <li class="button-row">
@@ -40,15 +38,7 @@
     </div>
     <div class="sidebar box">
         <div class="sidebox widget">
-            <h3 class="widget-title">Where Are We?</h3>
-            <p>Lorem Ipsum Dolor Sit Moon Avenue No:11/21 Planet City, Earth</p>
-            <p> <span class="lite1">Fax:</span> +555 797 534 01<br>
-                <span class="lite1">Tel:</span> +555 636 646 62<br>
-                <span class="lite1">E-mail:</span> name@domain.com </p>
-        </div>
-        <div class="sidebox widget">
-            <h3 class="widget-title">Custom Text</h3>
-            <p>Suspendisse eu odio quis elit ultrice commodo tempor eget arcu. Sedur aliquet posuere lectus aliquam iaculi. Curabitur a risus metus. In ut lorem nisl, et adipiscing sapien. Donec sed risus tristiq scelerisque. </p>
+            {% for contact in contact %} {{contact.ContactDescription|safe}} {% endfor %}
         </div>
     </div>
     <div class="clear"></div>

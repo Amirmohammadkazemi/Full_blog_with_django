@@ -2,26 +2,27 @@
 <div class="scanlines"></div>
 
 <div class="wrapper">
+
     <div class="main-image">
-        <div class="outer"> <span class="inset"><img src="" alt=""></span> </div>
+        <div class="outer"> <span class="inset"><img src="{{article.ArtileThumbnail.url}}" alt=""></span> </div>
     </div>
     <div class="box">
         <div class="post format-image box">
-            <div class="details"> <span class="icon-image">September 26, 2045</span> <span class="likes"><a href="#" class="likeThis">44</a></span> <span class="comments"><a href="#">3</a></span> </div>
-            <h1 class="title">Morning Glory</h1>
-            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of autumn which I enjoy with my whole heart.</p>
-            <div class="tags"><a href="#">journal</a>, <a href="#">photography</a></div>
-
+            <!--<div class="details"> <span class="icon-image"></span></div>-->
+            <div class="outer"> <span class="inset"><img src="" alt=""></span> </div>
+            <h1 class="title">{{article.ArticleTitle}}</h1>
+            <p>{{article.ArticleBody|safe}}</p>
             <div class="clear"></div>
+            <div class="tags"><a href="#">tag</a></div>
         </div>
     </div>
     <div id="comment-wrapper" class="box">
         <div id="comments">
-            <h3 id="comments-title">3 Responses to "Morning Glory"</h3>
+            <h3 id="comments-title">کامنت ها</h3>
             <ol id="singlecomments" class="commentlist">
                 <li class="comment">
                     <div class="comment">
-                        <div class="comment-author vcard user frame"> <img src="style/images/avatar.jpg" class="avatar avatar-70 photo" height="70" width="70" alt=""></div>
+                        <div class="comment-author vcard user frame"> <img src="" class="avatar avatar-70 photo" height="70" width="70" alt=""></div>
                         <div class="message"> <span class="reply-link"><a class="comment-reply-link" href="#">Reply</a></span>
                             <div class="info">
                                 <h2>Laura</h2>

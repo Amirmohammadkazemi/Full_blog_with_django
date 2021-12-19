@@ -1,0 +1,23 @@
+{% extends 'pages/base.html' %} {% block main %}
+<div class="scanlines"></div>
+
+<div class="wrapper">
+    <div class="box">
+        {% for article in articles %}
+        <div class="post format-image box">
+            <a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank"> <img src="{{article.ArtileThumbnail.url}}" width="500" height="281" alt="" style="align-items: center;">
+            </a>
+            <h1 class="title"><a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank">{{article.ArticleTitle}}</a></h1>
+            {{article.ArticleDiscription}}
+            <div class="details"> <span class="icon-image">{{article.ArticleDate}}</span></div>
+            <div class="tags"><a href="#">tag</a></div>
+
+            <div class="clear"></div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+<div class="clear"></div>
+</div>
+{% endblock %}

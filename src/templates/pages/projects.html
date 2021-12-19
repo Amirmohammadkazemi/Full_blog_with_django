@@ -2,23 +2,12 @@
 <div class="scanlines"></div>
 <div class="wrapper">
     <div class="box">
-        <h1 class="title">Full-Width</h1>
-        <div class="one-third">
-            <div class="outer none"><span class="inset"><img src="" alt=""></span></div>
-        </div>
+        {% for project in projects %}
+        <h1 class="title">{{project.ProjectName}}</h1>
         <div class="two-third last">
-            <h2>About Me</h2>
-            <p>Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis
-                ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-            <h4>Fermentum Purus Ipsum</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit
-                amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl.</p>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam
-                eget risus varius blandit sit amet non magna.<br>
+            {{project.ProjectDescription|safe}}
         </div>
+        {% endfor %}
         <div class="clear"></div>
     </div>
 </div>

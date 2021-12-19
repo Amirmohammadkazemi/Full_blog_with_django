@@ -1,19 +1,18 @@
 {% extends 'pages/base.html' %} {% block main %}
 <div class="scanlines"></div>
-
+{% for support in supports %}
 <div class="wrapper">
     <div class="main-image">
-        <div class="outer"> <span class="inset"><img src="" alt=""></span> </div>
+        <div class="outer"> <span class="inset"><img src="{{support.SupportImage.url}}" alt=""></span> </div>
     </div>
     <div class="box">
         <div class="post format-image box">
-            <h1 class="title">حمایت مالی</h1>
-            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of autumn which I enjoy with my whole heart.</p>
-
+            {{support.SupportDescription|safe}}
             <div class="clear"></div>
         </div>
     </div>
 </div>
+{% endfor %}
 <div class="clear"></div>
 </div>
 {% endblock %}
