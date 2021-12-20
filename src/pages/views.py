@@ -38,7 +38,9 @@ def Contact(request):
 
 def Support(request):
     context = {
-        'supports': pagemodel.Support.filter(SupportStatus='Publish').order_by('SupportDate'),
+        'supports':
+            #pagemodel.Support.objects.all(),
+            pagemodel.Support.objects.filter(SupportStatus='Publish').order_by('SupportDate'),
     }
     return render(request, 'pages/support.html', context)
 
