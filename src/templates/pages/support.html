@@ -1,8 +1,9 @@
 {% extends 'pages/base.html' %} {% block main %}
 <div class="scanlines"></div>
-{% for support in supports %}
 <div class="wrapper">
+
     <div class="main-image">
+        {% for support in supports %}
         <div class="outer"> <span class="inset"><img src="{{support.SupportImage.url}}" alt=""></span> </div>
     </div>
     <div class="box">
@@ -10,9 +11,9 @@
             {{support.SupportDescription|safe}}
             <div class="clear"></div>
         </div>
+        {% endfor %}
     </div>
 </div>
-{% endfor %}
 <div class="clear"></div>
 </div>
 {% endblock %}

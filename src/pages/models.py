@@ -55,7 +55,8 @@ class Support(models.Model):
     )
     SupportImage = models.ImageField(null=True, verbose_name='تصویر')
     SupportDescription = RichTextUploadingField(null=True, verbose_name='توضیحات ')
-    ArticleStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
+    SupportDate = models.DateField(null=True, verbose_name='تاریخ')
+    SupportStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     
     def __str__(self):
         return "حمایت مالی"
