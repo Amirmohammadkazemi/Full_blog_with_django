@@ -5,10 +5,10 @@ from config import models as configmodel
 # Create your views here.
 def Home(request):
     context = {
-        'header': configmodel.Header.objects.all(),
+        'header': configmodel.Header.objects.filter(HeaderStatus='Publish'),
         'articles': pagemodel.Article.objects.filter(ArticleStatus='Publish').order_by('-ArticleDate'),
-        'sub': configmodel.Sub.objects.all(),
-        'media': configmodel.Media.objects.all(),
+        'sub': configmodel.Sub.objects.filter(SubStatus='Publish'),
+        'media': configmodel.Media.objects.filter(MediaStatus='Publish'),
     }
     return render(request, 'pages/index.html', context)
 
