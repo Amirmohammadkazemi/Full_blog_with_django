@@ -4,6 +4,14 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils import timezone
 
 # Create your models here.
+class Category(models.Model):
+    CategoryTitle = models.CharField(max_length=100, verbose_name='دسته')
+    CategorySlug = models.SlugField(null=True, verbose_name='آدرس کوتاه')
+    CategoryStatus = models.BooleanField(default=True, verbose_name='نمایش')
+
+    def __str__(self):
+        return self.CategoryTitle
+
 class Article(models.Model):
     STATUS_CHOICES = (
         ('Publish', 'انتشار'),
@@ -11,13 +19,14 @@ class Article(models.Model):
     )
     ArticleTitle = models.CharField(max_length=100, verbose_name="تیتر مقاله")
     ArticleSlug = models.SlugField(null=True, verbose_name="آدرس کوتاه")
+    ArticleCategory = models.ManyToManyField(Category, verbose_name='دسته بندی')
     ArtileThumbnail = models.ImageField(null=True, verbose_name="تصویر مقاله")
     ArticleDiscription = models.TextField(null=True, verbose_name='توضیح کوتاه')
     ArticleBody = RichTextUploadingField(null=True, default='Body', verbose_name="متن مقاله")
     ArticleDate = models.DateTimeField(default=timezone.now, verbose_name="تاریخ")
     ArticleStatus = models.CharField(null=True, max_length=10, choices=STATUS_CHOICES, verbose_name='وضعیت')
     #User
-    
+
     def __str__(self):
         return self.ArticleTitle
 
