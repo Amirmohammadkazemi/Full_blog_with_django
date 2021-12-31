@@ -10,6 +10,11 @@
             <h1 class="title"><a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank">{{article.ArticleTitle}}</a></h1>
             {{article.ArticleDiscription}}
             <div class="details"> <span class="icon-image">{{article.ArticleDate}}</span></div>
+            <div class="tags">
+              {% for category in article.ArticleCategory.all %}
+              <a href="#">{{category.CategoryTitle}}</a>
+              {% endfor %}
+            </div>
             <div class="tags"><a href="#">tag</a></div>
 
             <div class="clear"></div>

@@ -49,3 +49,9 @@ def Blogs(request):
         'articles': pagemodel.Article.objects.filter(ArticleStatus='Publish').order_by('-ArticleDate'),
     }
     return render(request, 'pages/blogs.html', context)
+
+def Base(request):
+    context = {
+        'category': pagemodel.Category.objects.all(),
+    }
+    return render(request, 'pages/base.html', context)

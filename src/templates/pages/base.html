@@ -1,4 +1,6 @@
 {% load static %}
+{% load base_tags %}
+
 <!DOCTYPE HTML>
 <html lang="fa" dir="rtl">
 
@@ -44,8 +46,7 @@
 <body>
     <div class="scanlines"></div>
     <div class="header-wrapper opacity">
-        <div class="header">
-            <div class="logo">
+        <div class="header"><div class="logo">
                 <a href="/"> <img src="static/pages/style/images/logo@2x.png" alt=""> </a>
             </div>
             <div id="menu-wrapper">
@@ -77,8 +78,8 @@
             </div>
         </div>
     </div>
-
-
+    {% category %}
+    <!--{% popularpost %}-->
     {% block main %} {% endblock %}
 
     <div class="footer-wrapper">

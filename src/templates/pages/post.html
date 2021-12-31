@@ -1,6 +1,6 @@
 {% extends 'pages/base.html' %} {% block main %}
 <div class="scanlines"></div>
-
+	{% for cat in category %}{{cat.CategoryTitle}}{% endfor %}
 <div class="wrapper">
 
     <div class="main-image">

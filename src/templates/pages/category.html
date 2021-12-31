@@ -1,0 +1,19 @@
+<style>
+  ul li{
+    font-size: large;
+  }
+  h3{
+    color: red;
+  }
+  a {
+    color: green;
+  }
+</style>
+<div class="sidebar">
+    <h3 class="widget-title">|||--دسته بندی ها--|||</h3>
+    <ul>
+      {% for cat in category%}
+      <li><a href="#">{{cat}}</a></li>
+      {% endfor %}
+    </ul>
+</div>

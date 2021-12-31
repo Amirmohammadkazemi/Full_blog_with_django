@@ -1,4 +1,5 @@
 {% extends 'pages/base.html' %} {% block main %}
+{% load base_tags %}
 <div class="wrapper">
     <div class="intro">
         {% for header in header %} {{header.HeaderDescription|safe}} {% endfor %}
