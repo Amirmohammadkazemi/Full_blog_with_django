@@ -19,7 +19,7 @@ class Article(models.Model):
     )
     ArticleTitle = models.CharField(max_length=100, verbose_name="تیتر مقاله")
     ArticleSlug = models.SlugField(null=True, verbose_name="آدرس کوتاه")
-    ArticleCategory = models.ManyToManyField(Category, verbose_name='دسته بندی')
+    ArticleCategory = models.ManyToManyField(Category, verbose_name='دسته بندی', related_name='articlecategory')
     ArtileThumbnail = models.ImageField(null=True, verbose_name="تصویر مقاله")
     ArticleDiscription = models.TextField(null=True, verbose_name='توضیح کوتاه')
     ArticleBody = RichTextUploadingField(null=True, default='Body', verbose_name="متن مقاله")
