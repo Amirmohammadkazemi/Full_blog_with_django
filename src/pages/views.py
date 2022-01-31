@@ -55,3 +55,9 @@ def Base(request):
         'category': pagemodel.Category.objects.all(),
     }
     return render(request, 'pages/base.html', context)
+
+def Category(request, slug):
+    context = {
+        'category': pagemodel.Category.objects.get(CategoryStatus=True, CategorySlug=slug) ,
+    }
+    return render(request, 'pages/categorypage.html', context)

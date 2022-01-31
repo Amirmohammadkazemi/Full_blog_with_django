@@ -3,7 +3,7 @@
 
 <div class="wrapper">
     <div class="box">
-        {% for article in articles %}
+        {% for article in category.articlecategory.all %}
         <div class="post format-image box">
             <a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank"> <img src="{{article.ArtileThumbnail.url}}" width="500" height="281" alt="" style="align-items: center;">
             </a>
@@ -11,9 +11,9 @@
             {{article.ArticleDiscription}}
             <div class="details"> <span class="icon-image">{{article.ArticleDate}}</span></div>
             <div class="tags">
-            {% for cat in article.ArticleCategory.all %}
-              <a href="{% url 'pages:category' cat.CategorySlug %}" target="_blank">{{cat.CategoryTitle}}/ </a>
-            {% endfor %}
+              {% for category in article.ArticleCategory.all %}
+              <a href="{% url 'pages:category' category.CategorySlug %}">{{category.CategoryTitle}}/ </a>
+              {% endfor %}
             </div>
             <div class="clear"></div>
         </div>
