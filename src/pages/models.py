@@ -8,7 +8,6 @@ class Category(models.Model):
     ParentCategory = models.ForeignKey('self', default=None, null=True, blank=True, on_delete=models.SET_NULL, related_name='children', verbose_name='دسته مادر')
     CategoryTitle = models.CharField(max_length=100, verbose_name='دسته')
     CategorySlug = models.SlugField(null=True, verbose_name='آدرس کوتاه')
-    CategoryStatus = models.BooleanField(default=True, verbose_name='نمایش')
 
     def __str__(self):
         return self.CategoryTitle

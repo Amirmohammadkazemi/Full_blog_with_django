@@ -6,7 +6,7 @@ register = template.Library()
 @register.inclusion_tag("pages/category.html")
 def category():
     return {
-        "category": Category.objects.filter(CategoryStatus=True),
+        "category": Category.objects.all(),
     }
 
 @register.inclusion_tag("pages/popularpost.html")
