@@ -1,0 +1,8 @@
+<ul>
+    {% for cat in cat.children.all %}
+      <li>
+          <a href="{% url 'pages:category' cat.CategorySlug %}" target="_blank">{{cat.CategoryTitle}}</a>
+          {% include 'pages/categorylistloop.html' %}
+        </li>
+    {% endfor %}
+</ul>

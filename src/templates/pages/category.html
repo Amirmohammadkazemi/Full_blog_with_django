@@ -1,27 +1,16 @@
-<style>
-  ul li{
-    font-size: large;
-  }
-  h3{
-    color: red;
-  }
-  a {
-    color: green;
-  }
-  .sidebar {
-    width: auto;
-    margin-left: 0px;
-    float: right;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box; /* Firefox, other Gecko */
-    box-sizing: border-box; /* Opera/IE 8+ */
-}
-</style>
-<div class="sidebar">
-    <h3 class="widget-title">|||--دسته بندی ها--|||</h3>
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <body>
     <ul>
       {% for cat in category %}
-      <li><a href="{% url 'pages:category' cat.CategorySlug %}">{{cat}}</a></li>
+        {% if cat.ParentCategory == None %}
+          <li><a href="{% url 'pages:category' cat.CategorySlug %}" target="_blank">{{cat.CategoryTitle}}</a>
+            {% if cat.children.all %}
+              {% include 'pages/categorylistloop.html' %}
+            {% endif %}
+        {% endif %}
       {% endfor %}
     </ul>
-</div>
+  </body>
+</html>

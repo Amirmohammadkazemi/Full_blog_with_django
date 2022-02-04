@@ -14,9 +14,9 @@ class ArticleAdmin(admin.ModelAdmin):
     category_name.short_description='دسته بندی'
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('CategoryTitle', 'CategoryStatus')
+    list_display = ('CategoryTitle', 'CategoryStatus', 'ParentCategory')
     list_filter = ('CategoryStatus',)
-    search_fields = ('CategoryTitle', 'CategoryStatus')
+    search_fields = ('CategoryTitle', 'CategoryStatus', 'ParentCategory')
 
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('ProjectName', 'ProjectStatus')

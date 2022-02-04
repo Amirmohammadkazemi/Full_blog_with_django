@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{% static '/pages/style/css/media-queries.css' %}">
 
     <link rel="stylesheet" type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700'>
-    <link rel="shortcut icon" href="{% static '/style/images/logo.png' %}">
+    <link rel="shortcut icon" href="{% static '/pages/style/images/logo.png' %}">
     <!--[if IE 8]>
 <link rel="stylesheet" type="text/css" href="style/css/ie8.css" media="all">
 <![endif]-->
@@ -41,6 +41,10 @@
     <script>
         $.backstretch("{% static '/pages/style/images/bg/3.jpg' %}");
     </script>
+    <meta charset="UTF-8">
+    <title>Pure CSS DropDown Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/pages/style/css/categorylist.css' %}">
 </head>
 
 <body>
@@ -48,23 +52,19 @@
     <div class="header-wrapper opacity">
         <div class="header"><div class="logo">
                 <a href="/"> <img src="static/pages/style/images/logo@2x.png" alt=""> </a>
-            </div>
-            <div id="menu-wrapper">
-                <div id="menu" class="menu">
-                    <ul id="tiny">
-                        <li><a href="/support" target="_blank">حمایت مالی</a>
-                        </li>
-                        <li><a href="/blogs/" target="_blank">وبلاگ ها</a>
-                        </li>
-                        <li><a href="/projects" target="_blank">پروژه ها</a>
-                        </li>
-                        <li><a href="/aboutme" target="_blank">درباره من</a>
-                        </li>
-                        <li><a href="/contact" target="_blank">تماس با من</a></li>
+        </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">دسته مطلب ها</a>
+                            {% category %}
                         <li><a href="/">خانه</a></li>
+                        <li><a href="/contact" target="_blank">تماس با من</a></li>
+                        <li><a href="/aboutme" target="_blank">درباره من</a></li>
+                        <li><a href="/support" target="_blank">حمایت مالی</a></li>
+                        <li><a href="/projects" target="_blank">پروژه ها</a>
+                        <li><a href="/blogs/" target="_blank">همه مطلب ها</a>
                     </ul>
-                </div>
-            </div>
+                </nav>
             <div class="clear"></div>
         </div>
     </div>
@@ -78,7 +78,6 @@
             </div>
         </div>
     </div>
-    {% category %}
     <!--{% popularpost %}-->
     {% block main %} {% endblock %}
 
