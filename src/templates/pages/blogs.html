@@ -1,40 +1,35 @@
 {% extends 'pages/base.html' %} {% block main %}
-<div class="scanlines"></div>
-
 <div class="wrapper">
-    <div class="box">
-        {% for article in articles %}
-        <div class="post format-image box">
-            <a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank"> <img src="{{article.ArtileThumbnail.url}}" width="500" height="281" alt="" style="align-items: center;">
-            </a>
-            <h1 class="title"><a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank">{{article.ArticleTitle}}</a></h1>
-            {{article.ArticleDiscription}}
-            <div class="details"> <span class="icon-image">{{article.ArticleDate}}</span></div>
-            <div class="tags">
-            {% for cat in article.ArticleCategory.all %}
-              <a href="{% url 'pages:category' cat.CategorySlug %}" target="_blank">{{cat.CategoryTitle}}/ </a>
-            {% endfor %}
+  <div class="box">
+    <div class="blog-wrap">
+        <div class="blog-grid">
+            {% for article in articles %}
+            <div class="post format-image box">
+                <div class="frame">
+                    <a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank"> <img src="{{article.ArtileThumbnail.url}}" alt=""> </a>
+                </div>
+                <h2 class="title"><a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank">{{article.ArticleTitle}}</a></h2>
+                {{article.ArticleDiscription}}
+                <div class="details"> <span class="icon-image">{{article.ArticleDate}}</span></div>
             </div>
-            <div class="clear"></div>
+            {% endfor %}
         </div>
-        {% endfor %}
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              {% if articles.has_previous %}
-              <li class="page-item"><a class="page-link" href="{% url 'pages:blogpages' %}?page={{articles.previous_page_number}}">"{{articles.previous_page_number}}"صفحه قبل</a></li>
-              {% endif %}
-
-              <li class="page-item"><a class="page-link" href="{% url 'pages:blogpages' %}?page={{articles.1}}">صفحه اول</a></li>
-              <li class="page-item"><a class="page-link">صفحه {{ articles.number }} از {{articles.paginator.num_pages}}</a></li>
-              <li class="page-item"><a class="page-link" href="{% url 'pages:blogpages' %}?page={{articles.paginator.num_pages}}">صفحه آخر</a></li>
-
-              {% if articles.has_next %}
-              <li class="page-item"><a class="page-link" href="{% url 'pages:blogpages' %}?page={{articles.next_page_number}}">صفحه بعد"{{articles.next_page_number}}"</a></li>
-              {% endif %}              
-            </ul>
-        </nav>
     </div>
-</div>
-<div class="clear"></div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        {% if articles.has_previous %}
+        <li class="page-item"><a class="page-link" href="{% url 'pages:blogpages' %}?page={{articles.previous_page_number}}">"{{articles.previous_page_number}}"صفحه قبل</a></li>
+        {% endif %}
+
+        <li class="page-item"><a class="page-link" href="{% url 'pages:blogpages' %}?page={{articles.1}}">صفحه اول</a></li>
+        <li class="page-item"><a class="page-link">صفحه {{ articles.number }} از {{articles.paginator.num_pages}}</a></li>
+        <li class="page-item"><a class="page-link" href="{% url 'pages:blogpages' %}?page={{articles.paginator.num_pages}}">صفحه آخر</a></li>
+
+        {% if articles.has_next %}
+        <li class="page-item"><a class="page-link" href="{% url 'pages:blogpages' %}?page={{articles.next_page_number}}">صفحه بعد"{{articles.next_page_number}}"</a></li>
+        {% endif %}              
+      </ul>
+  </nav>
+  </div>
 </div>
 {% endblock %}

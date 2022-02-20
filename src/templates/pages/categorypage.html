@@ -1,34 +1,29 @@
-{% extends 'pages/base.html' %} {% block main %}
-<div class="scanlines"></div>
-
+{% extends 'pages/base.html' %} {% block main %}<div class="scanlines"></div>
 <div class="wrapper">
     <div class="box">
-        {% for article in category.articlecategory.all %}
-        <div class="post format-image box">
-            <a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank"> <img src="{{article.ArtileThumbnail.url}}" width="500" height="281" alt="" style="align-items: center;">
-            </a>
-            <h1 class="title"><a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank">{{article.ArticleTitle}}</a></h1>
-            {{article.ArticleDiscription}}
-            <div class="details"> <span class="icon-image">{{article.ArticleDate}}</span></div>
-            <div class="tags">
-              {% for category in article.ArticleCategory.all %}
-              <a href="{% url 'pages:category' category.CategorySlug %}">{{category.CategoryTitle}}/ </a>
-              {% endfor %}
+    <div class="intro">
+        {% for header in header %} {{header.HeaderDescription|safe}} {% endfor %}
+    </div>
+    <div class="blog-wrap">
+        <div class="blog-grid">
+            <div class="post format-quote box">
+                <blockquote style="font-size: 24px">
+                    {{category.CategoryTitle}}
+                </blockquote>
+                <div class="details"></div>
             </div>
-            <div class="clear"></div>
+            {% for article in category.articlecategory.all %}
+            <div class="post format-image box">
+                <div class="frame">
+                    <a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank"> <img src="{{article.ArtileThumbnail.url}}" alt=""> </a>
+                </div>
+                <h2 class="title"><a href="{% url 'pages:post' article.ArticleSlug %}" target="_blank">{{article.ArticleTitle}}</a></h2>
+                {{article.ArticleDiscription}}
+                <div class="details"> <span class="icon-image">{{article.ArticleDate}}</span></div>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">صفحه قبل</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">صفحه بعد</a></li>
-            </ul>
-          </nav>
     </div>
 </div>
-<div class="clear"></div>
 </div>
 {% endblock %}
