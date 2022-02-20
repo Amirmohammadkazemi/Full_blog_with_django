@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from . import models as pagemodel
 from config import models as configmodel
+from django.core.paginator import Paginator
 
 # Create your views here.
 def Home(request):
@@ -45,8 +46,12 @@ def Support(request):
     return render(request, 'pages/support.html', context)
 
 def Blogs(request):
+    articles_list = pagemodel.Article.objects.filter(ArticleStatus='Publish').order_by('-ArticleDate')
+    paginator = Paginator(articles_list, 6)
+    page_number = request.GET.get('page')
+    articles = paginator.get_page(page_number)
     context = {
-        'articles': pagemodel.Article.objects.filter(ArticleStatus='Publish').order_by('-ArticleDate'),
+        'articles': articles,
     }
     return render(request, 'pages/blogs.html', context)
 
