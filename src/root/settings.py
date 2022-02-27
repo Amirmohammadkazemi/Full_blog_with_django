@@ -9,6 +9,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'account:account'
+LOGIN_URL = 'account:login'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -17,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
+    'account.apps.AccountConfig',
     'ckeditor',
     'config.apps.ConfigConfig',
 ]
