@@ -35,6 +35,13 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "نام کاربری اشتباه">
+						{% if form.non_field_errors %}
+						<div class="errors" style="color:red">
+							{% for error in form.non_field_errors %}
+							    <span>{{error}}</span>
+							{% endfor %}
+						</div>
+						{% endif %}
 						<span class="label-input100">نام کاربری</span>
 						{{form.username}}
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
