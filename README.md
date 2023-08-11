@@ -1,4 +1,4 @@
-# Full-bblog-with-django
+# Full-blog-with-django
 This repository contains the most complete code required for the blog written by Django.
 ## Install
 ### Create Virtual Environment:
